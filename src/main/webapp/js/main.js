@@ -27,10 +27,7 @@ var swiper2 = new Swiper(".mySwiper", {
   slidesPerGroup: 5,
   loop: true,
   loopFillGroupWithBlank: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+  speed: 1000,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
