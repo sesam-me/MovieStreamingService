@@ -14,7 +14,7 @@ target/
 *.ipr
 
 ### DB config
-src/main/java/config
+src/main/java/config/*
 
 ### Eclipse ###
 .apt_generated
