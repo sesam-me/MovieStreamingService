@@ -36,8 +36,13 @@
     <url-pattern>/admin</url-pattern>
   </servlet-mapping>
 
-
-
-
+  <servlet>
+    <servlet-name>EditUserServlet</servlet-name>
+    <servlet-class>servlet.EditUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditUserServlet</servlet-name>
+    <url-pattern>/edit</url-pattern>
+  </servlet-mapping>
 
 </web-app>

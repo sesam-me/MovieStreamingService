@@ -11,18 +11,11 @@
     padding-bottom: 60px;
 }
 
-.loginBox h1 {
+.loginBox h1{
     font-size: 32px;
-    color: #fff;
+    color:white;
     text-align: center;
-    margin-bottom: 40px;
-}
-
-.loginBox h2 {
-    color: #a5a5a5;
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 }
 
 .loginBox .inputWrap {
@@ -36,21 +29,35 @@
     margin-bottom: 14px;
 }
 
-.loginBox .inputWrap .inputInnerWrap input {
-    padding: 0 20px;
-    border: none;
-    outline: none;
-    height: 53px;
-    background-color: #2f2f2f;
-    border-radius: 5px;
-    font-size: 15px;
-    color: #fff;
-}
-
 .loginBox .inputWrap .checkBoxArea {
     display: flex;
     gap: 10px;
     margin-bottom: 33px;
+}
+
+
+.loginBox h2{
+    color: #a5a5a5;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loginBox .inputWrap .inputInnerWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.loginBox .inputWrap .inputInnerWrap input{
+    padding: 0 20px;
+    border:none;
+    outline: none;
+    height: 53px;
+    background-color: #2f2f2f;
+    border-radius:5px;
+    color:#ffffff;
 }
 
 .loginBox .inputWrap .checkBoxArea label {
@@ -89,4 +96,8 @@
 .loginBox .inputWrap .formBottomMenu p:last-child {
     border-right: none;
 }
+
+
+
+
 

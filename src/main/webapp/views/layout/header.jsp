@@ -22,7 +22,7 @@
           <li><a>홈</a><li>
           <li><a>카테고리</a><li>
           <li><a>LIVE</a><li>
-          <li><a>MY</a><li>
+          <li><a href="/edit">MY</a><li>
         </ul>
       </div>
       <div class="search_section"></div>
