@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>
 <body>
-<%@include file="views/header.jsp"%>
+<%@include file="views/layout/header.jsp"%>
 <main>
     <div class="swiper">
         <div class="swiper-wrapper">

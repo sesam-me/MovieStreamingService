@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>
 <body>
-<%@include file="header.jsp"%>
+<%@include file="layout/header.jsp"%>
     <main>
         <section class="video_area_center">
             <div class="video_area">
