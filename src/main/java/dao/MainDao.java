@@ -19,7 +19,9 @@ public class MainDao {
 
     public List<MovieDto> mainMovieList(){
         Connection conn = new JdbcConnection().getJdbc();
-        String sql = "select * from movie;";
+        String sql = "select * from movie\n" +
+                "where release_date > now()\n" +
+                "ORDER BY release_date ASC;";
 
         List<MovieDto> movieDtoList = new ArrayList<MovieDto>();
 
