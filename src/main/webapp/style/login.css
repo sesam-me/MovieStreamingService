@@ -1,12 +1,13 @@
-.loginWrap {
+
+.loginWrap{
     width: 1240px;
     margin: 80px auto;
 }
 
-.loginBox {
+.loginbox{
     width: 560px;
     margin: 0 auto;
-    background: #252525;
+    background-color: #252525;
     padding-top: 40px;
     padding-bottom: 60px;
 }
@@ -23,6 +24,7 @@
 }
 
 .loginBox .inputWrap .inputInnerWrap {
+
     display: flex;
     flex-direction: column;
     gap: 7px;
@@ -34,7 +36,6 @@
     gap: 10px;
     margin-bottom: 33px;
 }
-
 
 .loginBox h2{
     color: #a5a5a5;
@@ -96,7 +97,6 @@
 .loginBox .inputWrap .formBottomMenu p:last-child {
     border-right: none;
 }
-
 
 
 

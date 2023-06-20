@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="../style/login.css">
     <meta charset="UTF-8">
     <title>Movie_Team_5</title>
     <link rel="stylesheet" href="../style/reset.css">
@@ -16,7 +17,6 @@
             <h2>Wavve 계정으로 로그인</h2>
 
             <form class="inputWrap">
-
                 <div class="inputInnerWrap">
                     <input placeholder="이메일 주소 또는 아이디" />
                     <input placeholder="비밀번호" />

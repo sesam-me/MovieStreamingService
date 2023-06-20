@@ -45,4 +45,14 @@
     <url-pattern>/edit</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>MainServlet</servlet-name>
+    <servlet-class>servlet.MainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MainServlet</servlet-name>
+    <url-pattern>/main</url-pattern>
+  </servlet-mapping>
+
 </web-app>
