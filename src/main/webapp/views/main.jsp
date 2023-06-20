@@ -19,21 +19,6 @@
                 <img style="height: 100%" src="${movie.getText_image()}"/>
               </div>
       </c:forEach>
-<%--      <div style="background-image: url('https://image.wavve.com/v1/thumbnails/1240_508_20_80/banner/pooq/2023/20230613_banner_160553.webp')" class="swiper-slide swiper-slide--one">--%>
-<%--        <img style="height: 100%" src="https://image.wavve.com/v1/thumbnails/2480_1016_20_80/banner/pooq/2023/imgbuild_20230613_165527147.png"/>--%>
-<%--      </div>--%>
-<%--      <div style="background-image: url('https://image.wavve.com/v1/thumbnails/1240_508_20_80/banner/pooq/2023/20230614_banner_172350.webp')" class="swiper-slide swiper-slide--two">--%>
-<%--        <img style="height: 100%" src="https://image.wavve.com/v1/thumbnails/2480_1016_20_80/banner/pooq/2023/imgbuild_20230614_172458119.png"/>--%>
-<%--      </div>--%>
-<%--      <div style="background-image: url('https://image.wavve.com/v1/thumbnails/1240_508_20_80/banner/pooq/2023/20230615_banner_160730.webp')" class="swiper-slide swiper-slide--three">--%>
-<%--        <img style="height: 100%" src="https://image.wavve.com/v1/thumbnails/2480_1016_20_80/banner/pooq/2023/imgbuild_20230615_160834414.png"/>--%>
-<%--      </div>--%>
-<%--      <div style="background-image: url('https://image.wavve.com/v1/thumbnails/1240_508_20_80/banner/pooq/2023/20230424_banner_165559.webp')" class="swiper-slide swiper-slide--four">--%>
-<%--        <img style="height: 100%" src="https://image.wavve.com/v1/thumbnails/2480_1016_20_80/banner/pooq/2023/imgbuild_20230615_103528179.png"/>--%>
-<%--      </div>--%>
-<%--      <div style="background-image: url('https://image.wavve.com/v1/thumbnails/1240_508_20_80/banner/pooq/2023/20230614_banner_144829.webp')" class="swiper-slide swiper-slide--five">--%>
-<%--        <img style="height: 100%" src="https://image.wavve.com/v1/thumbnails/1240_508_20_80/banner/pooq/2023/imgbuild_20230614_192309978.webp"/>--%>
-<%--      </div>--%>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
@@ -41,18 +26,13 @@
 </main>
 <section>
   <div class="section_center_wrap">
-    <p>실시간 인기 콘텐츠</p>
+    <p>오늘은 불 켜고 자야지...☆</p>
     <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
+        <c:forEach items="${horrorList}" var="horror">
+          <div style="background-image: url(${horror.getPoster_image()})" class="swiper-slide"></div>
+          <div style="background-image: url(${horror.getPoster_image()})" class="swiper-slide"></div>
+        </c:forEach>
 
       </div>
       <div class="swiper-pagination"></div>
@@ -62,7 +42,7 @@
 
 <section>
   <div class="section_center_wrap">
-    <p>한여름의 더위를 날려줄 공포영화</p>
+    <p>마블리한테 상큼하게 터져볼래?</p>
     <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
         <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
@@ -72,29 +52,6 @@
   </div>
 </section>
 
-<section>
-  <div class="section_center_wrap">
-    <p>실시간 인기 콘텐츠</p>
-    <div class="swiper-container mySwiper">
-      <div class="swiper-wrapper">
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="section_center_wrap">
-    <p>실시간 인기 콘텐츠</p>
-    <div class="swiper-container mySwiper">
-      <div class="swiper-wrapper">
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</section>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="../js/main.js"></script>
