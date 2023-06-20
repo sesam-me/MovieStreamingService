@@ -80,8 +80,7 @@ public class MainDao {
                                 resultSet.getString("link"),
                                 resultSet.getString("poster_image"),
                                 resultSet.getString("text_image"),
-                                null
-
+                                resultSet.getString("detail_image")
                         )
                 );
             }
