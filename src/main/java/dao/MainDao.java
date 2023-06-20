@@ -55,7 +55,43 @@ public class MainDao {
         return movieDtoList;
     }
 
+    public List<MovieDto> getGenre(String genre){
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql ="select * from movie where genre = ?";
 
+        List<MovieDto> genrelist = new ArrayList<MovieDto>();
+
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1, genre);
+
+            ResultSet resultSet = psmt.executeQuery();
+            while (resultSet.next()){
+                genrelist.add(
+                        new MovieDto(
+                                resultSet.getInt("movie_seq"),
+                                resultSet.getString("title"),
+                                resultSet.getDate("release_date"),
+                                resultSet.getInt("duration"),
+                                resultSet.getString("description"),
+                                resultSet.getString("rating"),
+                                resultSet.getString("genre"),
+                                resultSet.getString("director"),
+                                resultSet.getString("link"),
+                                resultSet.getString("poster_image"),
+                                resultSet.getString("text_image"),
+                                null
+
+                        )
+                );
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(genrelist);
+        return genrelist;
+    }
 
 
 

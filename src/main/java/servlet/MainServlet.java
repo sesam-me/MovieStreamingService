@@ -15,8 +15,13 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
+
         List<MovieDto> list = MainService.getMainService().showMovieList();
+        List<MovieDto> horrorList = MainService.getMainService().getGenre("공포");
+
         req.setAttribute("movieList", list);
+        req.setAttribute("horrorList", horrorList);
+
         req.getRequestDispatcher("views/main.jsp").forward(req, resp);
     }
 
