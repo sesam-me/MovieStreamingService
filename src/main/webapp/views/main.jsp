@@ -30,10 +30,8 @@
     <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
         <c:forEach items="${horrorList}" var="horror">
-          <div style="background-image: url(${horror.getPoster_image()})" class="swiper-slide"></div>
-          <div style="background-image: url(${horror.getPoster_image()})" class="swiper-slide"></div>
+          <div style="background-image: url(${horror.getDetail_image()})" class="swiper-slide"></div>
         </c:forEach>
-
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -42,10 +40,12 @@
 
 <section>
   <div class="section_center_wrap">
-    <p>마블리한테 상큼하게 터져볼래?</p>
+    <p>절대 주인공이 되고 싶지 않은 세계관</p>
     <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
-        <div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div><div style="background-image: url('https://image.wavve.com/v1/thumbnails/240_360_20_80/BMS/TVSeason/2022/M_1002831100000100000-Vertical_LogoY.webp')" class="swiper-slide"></div>
+        <c:forEach items="${actionList}" var="action">
+          <div style="background-image: url(${action.getDetail_image()})" class="swiper-slide"></div>
+        </c:forEach>
       </div>
       <div class="swiper-pagination"></div>
     </div>

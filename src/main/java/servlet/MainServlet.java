@@ -18,9 +18,11 @@ public class MainServlet extends HttpServlet {
 
         List<MovieDto> list = MainService.getMainService().showMovieList();
         List<MovieDto> horrorList = MainService.getMainService().getGenre("공포");
+        List<MovieDto> actionList = MainService.getMainService().getGenre("액션");
 
         req.setAttribute("movieList", list);
         req.setAttribute("horrorList", horrorList);
+        req.setAttribute("actionList", actionList);
 
         req.getRequestDispatcher("views/main.jsp").forward(req, resp);
     }
