@@ -55,11 +55,11 @@
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>AddMovieServlet</servlet-name>
-    <servlet-class>servlet.AddMovieServlet</servlet-class>
+    <servlet-name>AddMainMovieServlet</servlet-name>
+    <servlet-class>servlet.AddMainMovieServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AddMovieServlet</servlet-name>
+    <servlet-name>AddMainMovieServlet</servlet-name>
     <url-pattern>/addMovie</url-pattern>
   </servlet-mapping>
 
