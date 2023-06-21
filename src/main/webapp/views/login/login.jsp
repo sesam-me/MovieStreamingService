@@ -42,9 +42,8 @@
                 <div class="formBottomMenu">
                     <p>아이디 찾기</p>
                     <p>비밀번호 재설정</p>
-                    <p>회원가입</p>
+                    <p><a href="/signup">회원가입</a></p>
                 </div>
-
             </form>
         </div>
     </div>
