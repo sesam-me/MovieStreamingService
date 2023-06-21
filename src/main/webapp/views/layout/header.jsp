@@ -9,8 +9,10 @@
 
         <%
           if(session.getAttribute("useq") != null) {
-            session.invalidate();%>
-        <li><a href="/login">로그아웃</a></li>
+            %>
+<%--    #### href른 doget이 디폴트임.--%>
+<%--    <form class="inputWrap" action="/login" method="post"> 이렇게 method="post"로 보낸다면 dopost사용--%>
+        <li><a href="/logout">로그아웃</a></li>
         <% } else {
         %>
         <li><a href="/login">로그인</a></li>
@@ -37,7 +39,7 @@
           </a>
         </div>
         <ul>
-          <li><a>홈</a><li>
+          <li><a href="/main">홈</a><li>
           <li><a>카테고리</a><li>
           <li><a>LIVE</a><li>
           <li><a href="/edit">MY</a><li>

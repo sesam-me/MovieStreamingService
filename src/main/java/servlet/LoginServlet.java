@@ -27,7 +27,6 @@ public class LoginServlet extends HttpServlet {
 //      이메일로 로그인
         UserDto userDto2 = new UserDao().loginByEmail(userIdEmail, userPwd);
 
-
 //        TODO ||(또는) 없애는 방법으로도 할 수 있음
 //        UserDto userDto3 = new UserDao().loginById(userIdEmail, userPwd);
 //        if(userDto3==null)
@@ -35,18 +34,20 @@ public class LoginServlet extends HttpServlet {
 
 
 
-
 //       TODO 로그인 성공/실패 하는걸 메소드로 빼라???
 //      #3 로그인 성공/실패
 //      userDto1 != null을 하면 오류 뜸 -> 왜? userDto1은 껍데기이지 null이 아님
 //      userDto1.getUser_email()로 구체적인 값이 null인 걸 지정해줘야함..!
-        if(userDto1.getUser_email() != null || userDto2.getUser_email() != null){
-//          로그인 성공 시,
-//          #4 세션 생성
+
+        if(userDto1!= null || userDto2!= null) {
+
+            Integer seq=userDto1.getUser_seq();
+            if(userDto1==null){
+                seq = userDto2.getUser_seq();
+            }
+
             HttpSession session = req.getSession();
-//          #4-2 seq로 세션에 로그인 정보 저장
-            session.setAttribute("useq", userDto1.getUser_seq());
-//          #4-3 main페이지로 이동
+            session.setAttribute("useq",seq);
             resp.sendRedirect("/main");
 
 
