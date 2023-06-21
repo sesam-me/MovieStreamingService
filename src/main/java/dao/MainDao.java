@@ -19,9 +19,7 @@ public class MainDao {
 
     public List<MovieDto> mainMovieList(){
         Connection conn = new JdbcConnection().getJdbc();
-        String sql = "select * from movie\n" +
-                "where release_date > now()\n" +
-                "ORDER BY release_date ASC;";
+        String sql = "select * from main_movie where release_date < now()ORDER BY release_date ASC";
 
         List<MovieDto> movieDtoList = new ArrayList<MovieDto>();
 
@@ -59,7 +57,7 @@ public class MainDao {
 
     public List<MovieDto> getGenre(String genre){
         Connection conn = new JdbcConnection().getJdbc();
-        String sql ="select * from movie where genre = ?";
+        String sql ="select * from sub_movie where genre = ?";
 
         List<MovieDto> genrelist = new ArrayList<MovieDto>();
 
@@ -90,7 +88,7 @@ public class MainDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(genrelist);
+
         return genrelist;
     }
 
