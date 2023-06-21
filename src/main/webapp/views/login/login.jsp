@@ -14,12 +14,12 @@
     <div class="loginWrap">
         <div class="loginBox">
             <h1>로그인</h1>
-            <h2>Wavve 계정으로 로그인</h2>
+            <h2>Mavve 계정으로 로그인</h2>
 
-            <form class="inputWrap">
+            <form class="inputWrap" action="/login" method="post">
                 <div class="inputInnerWrap">
-                    <input placeholder="이메일 주소 또는 아이디" />
-                    <input placeholder="비밀번호" />
+                    <input placeholder="이메일 주소 또는 아이디" name="user_id_email" />
+                    <input placeholder="비밀번호" name="user_pwd" />
                 </div>
 
                 <div class="checkBoxArea">
