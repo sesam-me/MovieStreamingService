@@ -22,7 +22,7 @@
     <div class="info_box">
 
       <h1>회원 정보 수정 페이지 입니다.</h1>
-      <form>
+      <form method="post" action="/edit">
         <table class="info_table">
           <tr>
             <th>이름</th>

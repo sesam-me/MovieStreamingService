@@ -30,21 +30,25 @@ public class LoginServlet extends HttpServlet {
 
 
 //      #2 세션에 생성
-        HttpSession session = req.getSession();
+
 
 
 //      #4 세션에 로그인 정보 저장
 //      아이디로 로그인
-        session.setAttribute("uid", userDto1.getUser_id());
-        session.setAttribute("upwd", userDto1.getUser_pwd());
-//      이메일로 로그인
-        session.setAttribute("umail", userDto2.getUser_email());
 
 
 //      #5 로그인 후
 //      userDto1 != null을 하면 오류 뜸 -> 왜? userDto1은 껍데기이지 null이 아님
 //      userDto1.getUser_email()로 구체적인 값이 null인 걸 지정해줘야함..!
-        if(userDto1.getUser_email() != null || userDto2.getUser_email() != null) {
+        if(userDto1!= null || userDto2!= null) {
+
+            Integer seq=userDto1.getUser_seq();
+            if(userDto1==null){
+                seq = userDto2.getUser_seq();
+            }
+
+            HttpSession session = req.getSession();
+            session.setAttribute("useq",seq);
             resp.sendRedirect("/main");
         } else {resp.sendRedirect("/login");}
     }
