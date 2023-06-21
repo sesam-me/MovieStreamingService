@@ -57,7 +57,7 @@ flex-direction: column;
     width: 480px;
     /*height: 100px;*/
     display: flex;
-    padding-top: 40px;
+    padding-top: 30px;
     gap: 5px;
 }
 
@@ -70,12 +70,12 @@ flex-direction: column;
     color: #fff;
     text-align: center;
     border:none;
-    cursor:pointer;
 }
 
 .btn_box button{
     background-color: #525252;
 }
+
 .btn_box input{
     background-color: #1351f9;
 }

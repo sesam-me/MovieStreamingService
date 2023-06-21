@@ -42,7 +42,7 @@
           </tr>
           <tr>
             <th>휴대폰 번호</th>
-            <td><input type="text" placeholder="(선택)안넣어도 됩니다."></td>
+            <td><input type="text" placeholder="(선택) 안넣어도 됩니다."></td>
           </tr>
         </table>
 

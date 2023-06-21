@@ -28,6 +28,15 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>servlet.AdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>EditUserServlet</servlet-name>
     <servlet-class>servlet.EditUserServlet</servlet-class>
   </servlet>
@@ -36,5 +45,66 @@
     <url-pattern>/edit</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>MainServlet</servlet-name>
+    <servlet-class>servlet.MainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MainServlet</servlet-name>
+    <url-pattern>/main</url-pattern>
+  </servlet-mapping>
 
+  <servlet>
+    <servlet-name>AddMovieServlet</servlet-name>
+    <servlet-class>servlet.AddMovieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddMovieServlet</servlet-name>
+    <url-pattern>/addMovie</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AdminMenuServlet</servlet-name>
+    <servlet-class>servlet.AdminMenuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminMenuServlet</servlet-name>
+    <url-pattern>/adminMenu</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AddActorServlet</servlet-name>
+    <servlet-class>servlet.AddActorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddActorServlet</servlet-name>
+    <url-pattern>/addActor</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ShowMovieListServlet</servlet-name>
+    <servlet-class>servlet.ShowMovieListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowMovieListServlet</servlet-name>
+    <url-pattern>/showMovieList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ShowActorListServlet</servlet-name>
+    <servlet-class>servlet.ShowActorListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowActorListServlet</servlet-name>
+    <url-pattern>/showActorList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AddSubMovieServlet</servlet-name>
+    <servlet-class>servlet.AddSubMovieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddSubMovieServlet</servlet-name>
+    <url-pattern>/addSubMovie</url-pattern>
+  </servlet-mapping>
 </web-app>
