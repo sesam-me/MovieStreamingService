@@ -43,6 +43,7 @@ public class MainDao {
                 movieDto.setPoster_image(resultSet.getString("poster_image"));
                 movieDto.setText_image(resultSet.getString("text_image"));
                 movieDto.setDetail_image(resultSet.getString("detail_image"));
+                movieDto.setDetail_text_image(resultSet.getString("detail_text_image"));
 
                 movieDtoList.add(movieDto);
 
@@ -80,7 +81,8 @@ public class MainDao {
                                 resultSet.getString("link"),
                                 resultSet.getString("poster_image"),
                                 resultSet.getString("text_image"),
-                                resultSet.getString("detail_image")
+                                resultSet.getString("detail_image"),
+                                resultSet.getString("detail_text_image")
                         )
                 );
             }
@@ -90,6 +92,41 @@ public class MainDao {
         }
 
         return genrelist;
+    }
+
+    public MovieDto findMovieBySeq(int seq){
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql ="select * from main_movie where movie_seq = ?";
+        MovieDto movieDto = new MovieDto();
+
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setInt(1, seq);
+
+            ResultSet resultSet = psmt.executeQuery();
+
+            while (resultSet.next()){
+
+                movieDto.setMovie_seq(resultSet.getInt("movie_seq"));
+                movieDto.setTitle(resultSet.getString("title"));
+                movieDto.setRelease_date(resultSet.getDate("release_date"));
+                movieDto.setDuration(resultSet.getInt("duration"));
+                movieDto.setDescription(resultSet.getString("description"));
+                movieDto.setRating(resultSet.getString("rating"));
+                movieDto.setGenre(resultSet.getString("genre"));
+                movieDto.setDirector(resultSet.getString("director"));
+                movieDto.setLink(resultSet.getString("link"));
+                movieDto.setPoster_image(resultSet.getString("poster_image"));
+                movieDto.setText_image(resultSet.getString("text_image"));
+                movieDto.setDetail_image(resultSet.getString("detail_image"));
+                movieDto.setDetail_text_image(resultSet.getString("detail_text_image"));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return movieDto;
     }
 
 

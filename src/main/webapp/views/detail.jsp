@@ -13,7 +13,7 @@
     <main>
         <section class="video_area_center">
             <div class="video_area">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zmNRHgRG3lo?autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encryptedR-media; gyroscope; picture-in-picture; web-share"></iframe>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${movie.getLink()}?autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encryptedR-media; gyroscope; picture-in-picture; web-share"></iframe>
                 <div class="blur"></div>
 
             </div>
@@ -28,13 +28,12 @@
 
                 </div>
                 <div class="movie_title">
-                    <img style="height: 100px" src="https://image.wavve.com/v1/thumbnails/0_0_20_80/movieImg/MovieGroup/2023/GMV_CG01_NU0000011818-SingleColorContentLogo_Trimmed.png" />
+                    <img style="height: 100px" src="${movie.getDetail_text_image()}" />
                 </div>
                 <div class="limit">
-                    <span>2023</span>
-                    <span>120분</span>
-                    <span>15세</span>
-                    <span>예능</span>
+                    <span>${movie.getDuration()}분</span>
+                    <span>${movie.getRating()}세</span>
+                    <span>${movie.getGenre()}</span>
                 </div>
                 <div class="view">
                     <div>
@@ -42,7 +41,7 @@
                     </div>
                 </div>
                 <div class="description">
-                    <p>'돔'과 그의 패밀리 앞에 나타난 운명의 적 '단테'. 과거의 그림자는 돔의 모든 것을 파괴하기 위해 달려온다. 단테에 의해 산산이 흩어진 패밀리들은 모두 목숨을 걸고 맞서야 하는 함정에 빠지고 마는데... 달리거나 죽거나, 그들의 마지막 질주가 시작된다!</p>
+                    <p>${movie.getDescription()}</p>
                 </div>
             </div>
         </section>
@@ -54,20 +53,20 @@
                 </div>
                 <div class="detail_info_wrapper">
                     <div class="left_img_area">
-                        <img style="height: 277px; border-radius: 10px;" src="https://image.wavve.com/v1/thumbnails/240_360_20_80/movieImg/MovieGroup/2023/GMV_CG01_NU0000011818-Vertical_LogoY.webp" />
+                        <img style="height: 277px; border-radius: 10px;" src="${movie.getDetail_image()}" />
                     </div>
                     <div class="right_info_area">
                         <div class="info_title">
-                            <p>분노의 질주: 라이드 오어 다이</p>
-                            <p>'돔'과 그의 패밀리 앞에 나타난 운명의 적 '단테'. 과거의 그림자는 돔의 모든 것을 파괴하기 위해 달려온다. 단테에 의해 산산이 흩어진 패밀리들은 모두 목숨을 걸고 맞서야 하는 함정에 빠지고 마는데... 달리거나 죽거나, 그들의 마지막 질주가 시작된다!</p>
+                            <p>${movie.getTitle()}</p>
+                            <p>${movie.getDescription()}</p>
                         </div>
                         <div class="flexGap">
-                            <p>개요</p>
-                            <p>미국, 2023년</p>
+                            <p>개봉</p>
+                            <p>${movie.getRelease_date()}</p>
                         </div>
                         <div class="flexGap">
                             <p>장르</p>
-                            <p>액션</p>
+                            <p>${movie.getGenre()}</p>
                         </div>
                         <div class="flexGap">
                             <p>출연</p>
@@ -75,11 +74,11 @@
                         </div>
                         <div class="flexGap">
                             <p>감독</p>
-                            <p>루이스 리터리어</p>
+                            <p>${movie.getDirector()}</p>
                         </div>
                         <div class="flexGap">
                             <p>등급</p>
-                            <p>15세</p>
+                            <p>${movie.getRating()}세 이용가</p>
                         </div>
 
                     </div>
