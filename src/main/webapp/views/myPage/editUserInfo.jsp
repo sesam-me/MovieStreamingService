@@ -26,23 +26,23 @@
         <table class="info_table">
           <tr>
             <th>이름</th>
-            <td><input type="text"></td>
+            <td><input name="userName" type="text"></td>
           </tr>
           <tr>
             <th>이메일</th>
-            <td><input type="text"></td>
+            <td><input name="email" type="text"></td>
           </tr>
           <tr>
             <th>비밀번호</th>
-            <td><input type="text"></td>
+            <td><input name="password" type="text"></td>
           </tr>
           <tr>
             <th>생년월일</th>
-            <td><input type="text" placeholder="생년월일"></td>
+            <td><input name="birthDay" type="text" placeholder="생년월일"></td>
           </tr>
           <tr>
             <th>휴대폰 번호</th>
-            <td><input type="text" placeholder="(선택) 안넣어도 됩니다."></td>
+            <td><input name="phoneNumber" type="text" placeholder="(선택) 안넣어도 됩니다."></td>
           </tr>
         </table>
 
