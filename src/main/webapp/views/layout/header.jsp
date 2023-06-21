@@ -1,12 +1,30 @@
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
+
 <header>
   <div class="header_nav">
     <div class="header_top_wrap">
       <div></div>
       <ul>
+
+
+        <%
+          if(session.getAttribute("useq") != null) {
+            session.invalidate();%>
+        <li><a href="/login">로그아웃</a></li>
+        <% } else {
+        %>
         <li><a href="/login">로그인</a></li>
+        <% } %>
+
+
         <li><a href="/signup">회원가입</a></li>
+
+
         <li><a href="/adminMenu">관리자메뉴</a></li>
+
+
+
+
       </ul>
     </div>
   </div>
