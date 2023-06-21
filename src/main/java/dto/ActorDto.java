@@ -3,12 +3,15 @@ package dto;
 import java.util.Date;
 
 public class ActorDto {
+    private int actor_seq;
     private String name;
     private Date birth_date;
     private String nation;
     private String gender;
 
-    public ActorDto(String name, Date birth_date, String nation, String gender) {
+
+    public ActorDto(int actor_seq, String name, Date birth_date, String nation, String gender) {
+        this.actor_seq = actor_seq;
         this.name = name;
         this.birth_date = birth_date;
         this.nation = nation;
@@ -16,7 +19,14 @@ public class ActorDto {
     }
 
     public ActorDto() {
+    }
 
+    public int getActor_seq() {
+        return actor_seq;
+    }
+
+    public void setActor_seq(int actor_seq) {
+        this.actor_seq = actor_seq;
     }
 
     public String getName() {
