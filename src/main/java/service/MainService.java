@@ -22,4 +22,8 @@ public class MainService {
         return getGenreList;
     }
 
+    public MovieDto findMovieBySeq(int seq) {
+        return MainDao.getRepository().findMovieBySeq(seq);
+    }
+
 }

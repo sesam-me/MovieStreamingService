@@ -15,7 +15,7 @@
   <div class="swiper">
     <div class="swiper-wrapper">
       <c:forEach items='${movieList}' var="movie">
-              <div style="background-image: url(${movie.getPoster_image()})" class="swiper-slide swiper-slide--one">
+              <div style="background-image: url(${movie.getPoster_image()})" class="swiper-slide swiper-slide--one" onclick="window.location.href='/detail?seq=${movie.getMovie_seq()}'">
                 <img style="height: 100%" src="${movie.getText_image()}"/>
               </div>
       </c:forEach>

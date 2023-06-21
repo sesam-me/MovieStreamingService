@@ -15,8 +15,12 @@ public class MovieDto {
     private String poster_image;
     private String text_image;
     private String detail_image;
+    private String detail_text_image;
 
-    public MovieDto(int movie_seq, String title, Date release_date, int duration, String description, String rating, String genre, String director, String link, String poster_image, String text_image, String detail_image) {
+    public MovieDto() {
+    }
+
+    public MovieDto(int movie_seq, String title, Date release_date, int duration, String description, String rating, String genre, String director, String link, String poster_image, String text_image, String detail_image, String detail_text_image) {
         this.movie_seq = movie_seq;
         this.title = title;
         this.release_date = release_date;
@@ -29,9 +33,7 @@ public class MovieDto {
         this.poster_image = poster_image;
         this.text_image = text_image;
         this.detail_image = detail_image;
-    }
-
-    public MovieDto() {
+        this.detail_text_image = detail_text_image;
     }
 
     public int getMovie_seq() {
@@ -128,5 +130,13 @@ public class MovieDto {
 
     public void setDetail_image(String detail_image) {
         this.detail_image = detail_image;
+    }
+
+    public String getDetail_text_image() {
+        return detail_text_image;
+    }
+
+    public void setDetail_text_image(String detail_text_image) {
+        this.detail_text_image = detail_text_image;
     }
 }
