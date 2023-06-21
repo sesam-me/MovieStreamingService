@@ -59,6 +59,10 @@ public class UserDao {
             psmt.setString(2, user_pwd);
             ResultSet resultSet = psmt.executeQuery();
 
+
+//          while을 써줘야 함->왜? 만약 resultSet에 값이 없을 경우, 실행하지 않아야 하기 때문에,
+//          while을 하지 않으면 resultSet.getInt("user_seq")에 값이 없는데 들어가서 에러뜸.
+
             while(resultSet.next()){
                 // setter를 쓰는 것보다 method를 활용해서 세팅하는게 좋음
                 loginUser.createUser(
@@ -73,7 +77,12 @@ public class UserDao {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        };
+        }
+
+        if(loginUser.getUser_id()==null){
+            return null;
+        }
+
         return loginUser;
     }
 
@@ -109,7 +118,86 @@ public class UserDao {
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        };
+        }
+
+        if(loginUser.getUser_id()==null){
+            return null;
+        }
+
         return loginUser;
+    }
+
+
+    /**
+     * 회원 정보를 수정하는 로직
+     * @param userDto
+     * @return Boolean
+     */
+    public Boolean updateUser (UserDto userDto){
+        Connection conn = new JdbcConnection().getJdbc();
+
+        boolean isUpdate = false;
+
+        String sql = "update user set user_name=?,\n" +
+                "user_email=?,\n" +
+                "user_pwd=?,\n" +
+                "user_birthdate=?,\n" +
+                "user_phonenumber=?\n" +
+                "where user_seq =?";
+
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1,userDto.getUser_name());
+            psmt.setString(2,userDto.getUser_email());
+            psmt.setString(3,userDto.getUser_pwd());
+            psmt.setString(4,userDto.getUser_birthdate());
+            psmt.setString(5,userDto.user_phone_number());
+            psmt.setInt(6,userDto.getUser_seq());
+
+            int i = psmt.executeUpdate();
+
+            if(i>0) isUpdate =true;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return isUpdate;
+    }
+
+    /**
+     *
+     * @param user_seq
+     * @return
+     */
+    public UserDto getUserBySeq(int user_seq){
+        Connection conn = new JdbcConnection().getJdbc();
+
+        String sql="select * from user where user_seq=?";
+
+        UserDto userDto = new UserDto();
+
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setInt(1,user_seq);
+
+            ResultSet resultSet = psmt.executeQuery();
+            // 회원 하나만 나옴 이거
+            while(resultSet.next()){
+                userDto.createUser(
+                        resultSet.getInt("user_seq"),
+                        resultSet.getString("user_id"),
+                        resultSet.getString("user_name"),
+                        resultSet.getString("user_email"),
+                        resultSet.getString("user_pwd"),
+                        resultSet.getString("user_birthdate"),
+                        resultSet.getString("user_phonenumber")
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return userDto;
     }
 }
