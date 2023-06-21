@@ -59,8 +59,8 @@ public class MainDao {
     public int insertMainMovie(MovieDto movieDto) {
         Connection conn = new JdbcConnection().getJdbc();
 
-        String sql = "insert into main_movie(title, release_date, duration, description, rating, genre, director, link, poster_image, text_image, detail_image) " +
-                "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        String sql = "insert into main_movie(title, release_date, duration, description, rating, genre, director, link, poster_image, text_image, detail_image, detail_text_image) " +
+                "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         try {
             PreparedStatement psmt = conn.prepareStatement(sql);
@@ -75,6 +75,7 @@ public class MainDao {
             psmt.setString(9, movieDto.getPoster_image());
             psmt.setString(10, movieDto.getText_image());
             psmt.setString(11, movieDto.getDetail_image());
+            psmt.setString(12, movieDto.getDetail_text_image());
 
             if (psmt.executeUpdate() == 0) {
                 return 1;

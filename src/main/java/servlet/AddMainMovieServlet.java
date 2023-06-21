@@ -38,6 +38,7 @@ public class AddMainMovieServlet extends HttpServlet {
         movieDto.setPoster_image(req.getParameter("poster_image"));
         movieDto.setText_image(req.getParameter("text_image"));
         movieDto.setDetail_image(req.getParameter("detail_image"));
+        movieDto.setDetail_text_image(req.getParameter("detail_text_image"));
 
         AdminService.getMainService().insertMainMovie(movieDto);
         resp.sendRedirect("/adminMenu");

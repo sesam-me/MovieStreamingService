@@ -14,7 +14,7 @@
     <h1>영화 추가</h1>
     <h2>Wavve 영화 추가하기</h2>
 
-    <form method="post" class="inputWrap">
+    <form action="/addMovie" method="post" class="inputWrap">
       <div class="inputInnerWrap" style="margin-bottom: 25px;">
         <input name="title" placeholder="영화 이름" />
         <input name="release_date" placeholder="영화 개봉일" />
@@ -27,6 +27,7 @@
         <input name="poster_image" placeholder="영화 메인 포스터 이미지" />
         <input name="text_image" placeholder="영화 메인 텍스트 이미지" />
         <input name="detail_image" placeholder="영화 디테일 포스터 이미지" />
+        <input name="detail_text_image" placeholder="영화 디테일 텍스트 이미지" />
       </div>
 
       <div class="loginBtnArea">
