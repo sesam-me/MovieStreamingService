@@ -41,5 +41,9 @@ public class AdminService {
         ActorDao.getRepository().insertMovieActor(movie_seq, actor_seq);
     }
 
+    public List<ActorDto> movieSelectActor(int movieSeq){
+        return MainDao.getRepository().movieSelectActor(movieSeq);
+    }
+
 
 }
