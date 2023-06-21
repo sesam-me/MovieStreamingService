@@ -55,6 +55,80 @@ public class MainDao {
         return movieDtoList;
     }
 
+    public int insertMainMovie(MovieDto movieDto) {
+        Connection conn = new JdbcConnection().getJdbc();
+
+        String sql = "insert into main_movie(title, release_date, duration, description, rating, genre, director, link, poster_image, text_image, detail_image) " +
+                "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1, movieDto.getTitle());
+            psmt.setObject(2, movieDto.getRelease_date());
+            psmt.setInt(3, movieDto.getDuration());
+            psmt.setString(4, movieDto.getDescription());
+            psmt.setString(5, movieDto.getRating());
+            psmt.setString(6, movieDto.getGenre());
+            psmt.setString(7, movieDto.getDirector());
+            psmt.setString(8, movieDto.getLink());
+            psmt.setString(9, movieDto.getPoster_image());
+            psmt.setString(10, movieDto.getText_image());
+            psmt.setString(11, movieDto.getDetail_image());
+
+            if (psmt.executeUpdate() == 0) {
+                return 1;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return 0;
+
+    }
+
+    public int insertSubMovie(MovieDto movieDto) {
+        Connection conn = new JdbcConnection().getJdbc();
+
+        String sql = "insert into sub_movie (title, release_date, duration, description, rating, genre, director, link, poster_image, text_image, detail_image) \n" +
+                "values (? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1, movieDto.getTitle());
+            psmt.setObject(2, movieDto.getRelease_date());
+            psmt.setInt(3, movieDto.getDuration());
+            psmt.setString(4, movieDto.getDescription());
+            psmt.setString(5, movieDto.getRating());
+            psmt.setString(6, movieDto.getGenre());
+            psmt.setString(7, movieDto.getDirector());
+            psmt.setString(8, movieDto.getLink());
+            psmt.setString(9, movieDto.getPoster_image());
+            psmt.setString(10, movieDto.getText_image());
+            psmt.setString(11, movieDto.getDetail_image());
+
+            if (psmt.executeUpdate() == 0) {
+                return 1;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return 0;
+
+    }
+
     public List<MovieDto> getGenre(String genre){
         Connection conn = new JdbcConnection().getJdbc();
         String sql ="select * from sub_movie where genre = ?";

@@ -13,12 +13,12 @@
     <h1>배우 추가</h1>
     <h2>Wavve 배우 추가하기</h2>
 
-    <form class="inputWrap">
+    <form method="post" class="inputWrap">
       <div class="inputInnerWrap" style="margin-bottom: 25px;">
-        <input placeholder="배우 이름" />
-        <input placeholder="배우 생년월일" />
-        <input placeholder="배우 국적" />
-        <input placeholder="배우 성별" />
+        <input name="name" placeholder="배우 이름" />
+        <input name="birth_date" placeholder="배우 생년월일" />
+        <input name="nation" placeholder="배우 국적" />
+        <input name="gender" placeholder="배우 성별" />
       </div>
 
       <div class="loginBtnArea">
