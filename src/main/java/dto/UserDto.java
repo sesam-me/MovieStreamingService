@@ -97,12 +97,4 @@ public class UserDto {
         this.user_birthdate = user_birthdate;
         this.user_phone_number = user_phone_number;
     }
-
-    public String getUser_phone_number() {
-        return user_phone_number;
-    }
-
-    public void setUser_phone_number(String user_phone_number) {
-        this.user_phone_number = user_phone_number;
-    }
 }
