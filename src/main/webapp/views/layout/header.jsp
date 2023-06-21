@@ -6,7 +6,7 @@
       <ul>
         <li><a href="/login">로그인</a></li>
         <li><a href="/signup">회원가입</a></li>
-        <li><a href="/signup">관리자메뉴</a></li>
+        <li><a href="/admin">관리자메뉴</a></li>
       </ul>
     </div>
   </div>

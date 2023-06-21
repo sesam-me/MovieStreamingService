@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="../style/login.css">
     <meta charset="UTF-8">
     <title>Movie_Team_5</title>
     <link rel="stylesheet" href="../style/reset.css">
