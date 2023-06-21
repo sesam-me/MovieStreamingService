@@ -14,6 +14,7 @@ import java.util.List;
 public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        session을 열어준다
         HttpSession session = req.getSession();
         List<MovieDto> list = MainService.getMainService().showMovieList();
         req.setAttribute("movieList", list);
