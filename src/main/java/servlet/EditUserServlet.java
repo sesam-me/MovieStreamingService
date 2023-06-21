@@ -10,7 +10,6 @@ public class EditUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        System.out.println("입장");
         req.getRequestDispatcher("views/myPage/editUserInfo.jsp").forward(req,resp);
     }
 
