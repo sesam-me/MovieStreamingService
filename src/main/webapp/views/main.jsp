@@ -4,8 +4,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Movie_Team_5</title>
-  <link rlel="stylesheet" href="../stye/reset.css">
+  <title>Movie_Team_5</title>`
+  <link rel="stylesheet" href="../style/reset.css">
   <link rel="stylesheet" href="../style/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>

@@ -37,4 +37,6 @@ public class MainService {
         return MainDao.getRepository().findMovieBySeq(seq);
     }
 
+
+
 }

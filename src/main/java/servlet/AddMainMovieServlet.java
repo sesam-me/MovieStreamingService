@@ -1,5 +1,6 @@
 package servlet;
 
+import dao.MainDao;
 import dto.MovieDto;
 import service.AdminService;
 
@@ -8,11 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Date;
 
-public class AddSubMovieServlet extends HttpServlet {
+public class AddMainMovieServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("views/admin/addSubMovie.jsp").forward(req,resp);
+        req.getRequestDispatcher("views/admin/addMovie.jsp").forward(req,resp);
     }
 
     @Override
@@ -35,8 +38,11 @@ public class AddSubMovieServlet extends HttpServlet {
         movieDto.setPoster_image(req.getParameter("poster_image"));
         movieDto.setText_image(req.getParameter("text_image"));
         movieDto.setDetail_image(req.getParameter("detail_image"));
+        movieDto.setDetail_text_image(req.getParameter("detail_text_image"));
 
-        AdminService.getMainService().insertSubMovie(movieDto);
+        AdminService.getMainService().insertMainMovie(movieDto);
         resp.sendRedirect("/adminMenu");
+
+
     }
 }

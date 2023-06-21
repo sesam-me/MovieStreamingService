@@ -16,7 +16,34 @@ public class UserDao {
         if(userdao == null) userdao = new UserDao();
         return userdao;
     }
-
+    public boolean signUp(UserDto dto) {
+        Connection conn = new JdbcConnection().getJdbc();
+        boolean isSuccess = false;
+        String sql = "INSERT INTO user (user_id, user_name, user_email, user_pwd, user_birthdate, user_phonenumber) " +
+                "VALUES (?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1, dto.getUser_id());
+            psmt.setString(2, dto.getUser_name());
+            psmt.setString(3, dto.getUser_email());
+            psmt.setString(4, dto.getUser_pwd());
+            psmt.setString(5, dto.getUser_birthdate());
+            psmt.setString(6, dto.getUser_phone_number());
+            int rowsAffected = psmt.executeUpdate();
+            if (rowsAffected > 0) {
+                isSuccess = true;
+            }
+        } catch (SQLException e) {
+            return false;
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                return isSuccess;
+            }
+        }
+        return isSuccess;
+    }
 
     public UserDto loginById(String user_id, String user_pwd){
         Connection conn = new JdbcConnection().getJdbc();
@@ -35,6 +62,7 @@ public class UserDao {
 
 //          while을 써줘야 함->왜? 만약 resultSet에 값이 없을 경우, 실행하지 않아야 하기 때문에,
 //          while을 하지 않으면 resultSet.getInt("user_seq")에 값이 없는데 들어가서 에러뜸.
+
             while(resultSet.next()){
                 // setter를 쓰는 것보다 method를 활용해서 세팅하는게 좋음
                 loginUser.createUser(

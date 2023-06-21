@@ -19,7 +19,7 @@
           </a>
         </div>
         <ul>
-          <li><a>홈</a><li>
+          <li><a href="/main">홈</a><li>
           <li><a>카테고리</a><li>
           <li><a>LIVE</a><li>
           <li><a href="/edit">MY</a><li>
