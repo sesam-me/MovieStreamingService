@@ -17,15 +17,30 @@
 
             <form class="inputWrap" action="/login" method="post">
                 <div class="inputInnerWrap">
-                    <input placeholder="이메일 주소 또는 아이디" name="user_id_email" />
+                    <input placeholder="이메일 주소 또는 아이디" name="user_id_email" value="${id}"/>
                     <input placeholder="비밀번호" name="user_pwd" />
                 </div>
 
                 <div class="checkBoxArea">
 
                     <div>
-                        <input id="check1" type="checkbox" />
-                        <label for="check1" >아이디 저장</label>
+
+
+                        <%
+
+                            Boolean isChecked =(Boolean)session.getAttribute("isChecked");
+
+                            if(isChecked) {
+
+                                %>
+
+                        <input id="check1" type="checkbox" name="isChecked" checked />
+                        <label for="check1" >아이디 저장</label> <%}
+                        else {%>
+                        <input id="check1" type="checkbox" name="isChecked" />
+                        <label for="check1" >아이디 저장</label><%}%>
+
+
                     </div>
 
                     <div>
