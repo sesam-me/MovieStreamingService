@@ -125,5 +125,50 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/signup</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AiServlet</servlet-name>
+    <servlet-class>servlet.AiServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AiServlet</servlet-name>
+    <url-pattern>/ai</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AiResultServlet</servlet-name>
+    <servlet-class>servlet.AiResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AiResultServlet</servlet-name>
+    <url-pattern>/aiResult</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FindIdServlet</servlet-name>
+    <servlet-class>servlet.FindIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindIdServlet</servlet-name>
+    <url-pattern>/findId</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FindPasswordServlet</servlet-name>
+    <servlet-class>servlet.FindPasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindPasswordServlet</servlet-name>
+    <url-pattern>/findPassword</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SetPasswordServlet</servlet-name>
+    <servlet-class>servlet.SetPasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetPasswordServlet</servlet-name>
+    <url-pattern>/setPassword</url-pattern>
+  </servlet-mapping>
   
 </web-app>
