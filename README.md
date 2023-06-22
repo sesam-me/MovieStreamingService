@@ -68,9 +68,9 @@ Java 8 Servlet MySql ChatGPT JDBC Tomcat
 
 ## Feature Implementation
 
-| Main         | Login         |
+| Main 화면      | Login         |
 | ------------ | ------------- |
-| <img src = "https://github.com/sesam-me/HTML_lesson/assets/122416681/8136e9a1-42f1-4b52-a773-b2e82bc9a903" | Content Cell  |
+| ![GIFMaker_me](https://github.com/sesam-me/HTML_lesson/assets/122416681/b5aa6afa-9ce7-4685-972b-830ab5d4ab05)| Content Cell  |
 
 
 
