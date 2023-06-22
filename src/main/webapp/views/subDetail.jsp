@@ -73,7 +73,7 @@
                         <div class="flexGap">
                             <p>출연</p>
                             <div style="display: flex">
-                                <c:forEach items='${actorList}' var="actor">
+                                <c:forEach items='${subActorList}' var="actor">
                                     <div class="menu_item" style="margin-right: 4px;">${actor.getName()}</div>
                                 </c:forEach>
                             </div>

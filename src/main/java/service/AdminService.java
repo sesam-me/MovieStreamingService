@@ -45,5 +45,9 @@ public class AdminService {
         return MainDao.getRepository().movieSelectActor(movieSeq);
     }
 
+    public List<ActorDto> movieSubSelectActor(int movieSeq){
+        return MainDao.getRepository().movieSubSelectActor(movieSeq);
+    }
+
 
 }

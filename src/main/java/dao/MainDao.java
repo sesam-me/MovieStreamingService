@@ -316,5 +316,36 @@ public class MainDao {
         return actorDtoList;
     }
 
+    public List<ActorDto> movieSubSelectActor(int movieSeq) {
+        Connection conn = new JdbcConnection().getJdbc();
+
+        String sql = "SELECT a.name\n" +
+                "FROM sub_movie AS m\n" +
+                "INNER JOIN sub_movie_actor AS ma ON m.movie_seq = ma.movie_seq\n" +
+                "INNER JOIN actor AS a ON ma.actor_seq = a.actor_seq\n" +
+                "WHERE m.movie_seq = ?;";
+
+        List<ActorDto> actorDtoList = new ArrayList<ActorDto>();
+
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setInt(1, movieSeq);
+            ResultSet resultSet = psmt.executeQuery();
+
+            while (resultSet.next()) {
+                String actorName = resultSet.getString("name");
+
+                ActorDto actorDto = new ActorDto();
+                actorDto.setName(actorName);
+
+                actorDtoList.add(actorDto);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return actorDtoList;
+    }
+
 
 }

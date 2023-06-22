@@ -19,6 +19,11 @@ public class DetailServlet extends HttpServlet {
         MovieDto movie = MainService.getMainService().findMovieBySeq(movieDto);
 
         session.setAttribute("actorList", AdminService.getMainService().movieSelectActor(movie.getMovie_seq()));
+
+        System.out.println(movie.getMovie_seq());
+
+        System.out.println(AdminService.getMainService().movieSelectActor(movie.getMovie_seq()));
+
         session.setAttribute("movie", movie);
         req.getRequestDispatcher("views/detail.jsp").forward(req,resp);
     }
