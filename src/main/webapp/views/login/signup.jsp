@@ -40,7 +40,7 @@
         <p style="font-size: 14px; color: #A5A5A5; margin-bottom: 16px;">
           ◎로그인, 비밀번호 찾기, 알림에 사용되니 정확한 이메일을 입력해 주세요.
         </p>
-        <input name="userPwd" placeholder="mavve 비밀번호 설정" />
+        <input name="userPwd" placeholder="mavve 비밀번호 설정" type="password"/>
         <p class="loginerrortop">
           ◎비밀번호는 8~20자 이내로 입력해 주세요.
         </p>

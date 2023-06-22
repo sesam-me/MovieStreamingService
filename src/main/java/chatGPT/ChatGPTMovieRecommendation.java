@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class ChatGPTMovieRecommendation {
-    private static final String API_KEY = "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"; // 본인의 API 키로 대체
+    private static final String API_KEY = "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"; // 본인의 API 키로 대체
     private static final String MODEL_NAME = "text-davinci-003"; // 채팅 모델 이름
 
     public String sendChatGptRequest(String userInput) {

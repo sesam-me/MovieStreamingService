@@ -40,7 +40,7 @@ public class UserServlet extends HttpServlet {
             HttpSession session = req.getSession();
             session.setAttribute("uname", userDto.getUser_name());
             session.setAttribute("uid", userDto.getUser_id());
-            resp.sendRedirect("/main");
+            resp.sendRedirect("/login");
         }else{
             resp.sendRedirect("/signup");
         }

@@ -19,7 +19,7 @@
                 <div class="inputInnerWrap">
 
                     <input placeholder="이메일 주소 또는 아이디" name="user_id_email" value="${id}"/>
-                    <input placeholder="비밀번호" name="user_pwd" />
+                    <input placeholder="비밀번호" name="user_pwd" type="password"/>
 
                 </div>
 
@@ -45,10 +45,10 @@
 
                     </div>
 
-                    <div>
-                        <input id="check2" type="checkbox" />
-                        <label for="check2" >자동 로그인</label>
-                    </div>
+<%--                    <div>--%>
+<%--                        <input id="check2" type="checkbox" />--%>
+<%--                        <label for="check2" >자동 로그인</label>--%>
+<%--                    </div>--%>
 
                 </div>
 

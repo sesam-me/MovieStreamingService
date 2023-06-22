@@ -23,7 +23,7 @@ public class AiServlet extends HttpServlet {
         String userInput = req.getParameter("text");
 
         String chatGptResponse = new ChatGPTMovieRecommendation().sendChatGptRequest(userInput);
-
+        System.out.println(chatGptResponse);
         String[] chatGptReply = new ChatGPTMovieRecommendation().extractChatGptReply(chatGptResponse);
 
         HttpSession session = req.getSession();
