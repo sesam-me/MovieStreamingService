@@ -200,4 +200,81 @@ public class UserDao {
 
         return userDto;
     }
+
+    public UserDto findId(String name, String phoneNumber) {
+
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql = "SELECT user_id FROM user WHERE user_name = ? AND user_phonenumber = ?";
+        UserDto userDto = new UserDto();
+
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1, name);
+            psmt.setString(2, phoneNumber);
+
+            ResultSet resultSet = psmt.executeQuery();
+
+            while(resultSet.next()){
+                userDto.setUser_id(resultSet.getString("user_id"));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return userDto;
+    }
+
+    public static UserDto findPassword(String id, String name, String phoneNumber) {
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql = "SELECT user_id FROM user WHERE user_id = ? AND user_name = ? AND user_phonenumber = ?";
+        UserDto userDto = new UserDto();
+
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1, id);
+            psmt.setString(2, name);
+            psmt.setString(3, phoneNumber);
+
+            ResultSet rs = psmt.executeQuery();
+
+            while(rs.next()){
+                userDto.setUser_id(rs.getString("user_id"));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return userDto;
+    }
+
+    public static void updatePassword(String userId, String newPassword) {
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql = "UPDATE user SET user_pwd = ? WHERE user_id = ?";
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+            psmt.setString(1, newPassword);
+            psmt.setString(2, userId);
+            psmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
+

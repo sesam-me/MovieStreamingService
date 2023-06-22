@@ -1,6 +1,7 @@
 package dao;
 
 import config.JdbcConnection;
+import dto.ActorDto;
 import dto.MovieDto;
 
 import java.sql.Connection;
@@ -253,40 +254,67 @@ public class MainDao {
 
         return movieDto;
     }
-
+    
     public MovieDto findSubMovieBySeq(int seq){
+      Connection conn = new JdbcConnection().getJdbc();
+      String sql ="select * from sub_movie where movie_seq = ?";
+      MovieDto movieDto = new MovieDto();
+      try {
+          PreparedStatement psmt = conn.prepareStatement(sql);
+          psmt.setInt(1, seq);
+          ResultSet resultSet = psmt.executeQuery();
+          while (resultSet.next()){
+              movieDto.setMovie_seq(resultSet.getInt("movie_seq"));
+              movieDto.setTitle(resultSet.getString("title"));
+              movieDto.setRelease_date(resultSet.getDate("release_date"));
+              movieDto.setDuration(resultSet.getInt("duration"));
+              movieDto.setDescription(resultSet.getString("description"));
+              movieDto.setRating(resultSet.getString("rating"));
+              movieDto.setGenre(resultSet.getString("genre"));
+              movieDto.setDirector(resultSet.getString("director"));
+              movieDto.setLink(resultSet.getString("link"));
+              movieDto.setPoster_image(resultSet.getString("poster_image"));
+              movieDto.setText_image(resultSet.getString("text_image"));
+              movieDto.setDetail_image(resultSet.getString("detail_image"));
+              movieDto.setDetail_text_image(resultSet.getString("detail_text_image"));
+          }
+      } catch (SQLException e) {
+          throw new RuntimeException(e);
+      }
+      return movieDto;
+  }
+    
+  
+    public List<ActorDto> movieSelectActor(int movieSeq) {
         Connection conn = new JdbcConnection().getJdbc();
-        String sql ="select * from sub_movie where movie_seq = ?";
-        MovieDto movieDto = new MovieDto();
+
+        String sql = "SELECT a.name\n" +
+                "FROM main_movie AS m\n" +
+                "INNER JOIN movie_actor AS ma ON m.movie_seq = ma.movie_seq\n" +
+                "INNER JOIN actor AS a ON ma.actor_seq = a.actor_seq\n" +
+                "WHERE m.movie_seq = ?;";
+
+        List<ActorDto> actorDtoList = new ArrayList<ActorDto>();
 
         try {
             PreparedStatement psmt = conn.prepareStatement(sql);
-            psmt.setInt(1, seq);
-
+            psmt.setInt(1, movieSeq);
             ResultSet resultSet = psmt.executeQuery();
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
+                String actorName = resultSet.getString("name");
 
-                movieDto.setMovie_seq(resultSet.getInt("movie_seq"));
-                movieDto.setTitle(resultSet.getString("title"));
-                movieDto.setRelease_date(resultSet.getDate("release_date"));
-                movieDto.setDuration(resultSet.getInt("duration"));
-                movieDto.setDescription(resultSet.getString("description"));
-                movieDto.setRating(resultSet.getString("rating"));
-                movieDto.setGenre(resultSet.getString("genre"));
-                movieDto.setDirector(resultSet.getString("director"));
-                movieDto.setLink(resultSet.getString("link"));
-                movieDto.setPoster_image(resultSet.getString("poster_image"));
-                movieDto.setText_image(resultSet.getString("text_image"));
-                movieDto.setDetail_image(resultSet.getString("detail_image"));
-                movieDto.setDetail_text_image(resultSet.getString("detail_text_image"));
+                ActorDto actorDto = new ActorDto();
+                actorDto.setName(actorName);
+
+                actorDtoList.add(actorDto);
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        return movieDto;
+        return actorDtoList;
     }
+
 
 }

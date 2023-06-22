@@ -48,10 +48,7 @@
         </div>
         <ul>
           <li><a href="/main">홈</a><li>
-          <li><a>카테고리</a><li>
-          <li><a>LIVE</a><li>
-
-
+          <li><a href="/ai">AI 에게 영화 추천 받기</a><li>
 
             <% if(session.getAttribute("useq") != null) {
             %>
