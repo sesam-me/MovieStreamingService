@@ -70,8 +70,8 @@ Java 8 Servlet MySql ChatGPT JDBC Tomcat
 
 | Main         | Login         |
 | ------------ | ------------- |
-| Content Cell | Content Cell  |
-| Content Cell | Content Cell  |
+| <img src = "https://github.com/sesam-me/HTML_lesson/assets/122416681/8136e9a1-42f1-4b52-a773-b2e82bc9a903" | Content Cell  |
+
 
 
 
