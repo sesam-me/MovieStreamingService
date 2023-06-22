@@ -17,8 +17,8 @@
 
             <form class="inputWrap" action="/login" method="post">
                 <div class="inputInnerWrap">
-                    <input placeholder="이메일 주소 또는 아이디" name="user_id_email" />
-                    <input placeholder="비밀번호" name="user_pwd" />
+                    <input placeholder="이메일 주소 또는 아이디" type="text" name="user_id_email" />
+                    <input placeholder="비밀번호" type="password" name="user_pwd" />
                 </div>
 
                 <div class="checkBoxArea">
