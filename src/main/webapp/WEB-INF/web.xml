@@ -125,5 +125,23 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/signup</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AiServlet</servlet-name>
+    <servlet-class>servlet.AiServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AiServlet</servlet-name>
+    <url-pattern>/ai</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AiResultServlet</servlet-name>
+    <servlet-class>servlet.AiResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AiResultServlet</servlet-name>
+    <url-pattern>/aiResult</url-pattern>
+  </servlet-mapping>
   
 </web-app>
