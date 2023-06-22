@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet {
 
 
 
+
 //       TODO 로그인 성공/실패 하는걸 메소드로 빼라???
 //      #3 로그인 성공/실패
 //      userDto1 != null을 하면 오류 뜸 -> 왜? userDto1은 껍데기이지 null이 아님
