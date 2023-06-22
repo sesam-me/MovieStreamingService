@@ -2,15 +2,16 @@ package servlet;
 import dao.UserDao;
 import dto.UserDto;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
+import javax.servlet.http.Cookie;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("views/login/login.jsp").forward(req,resp);
+
+
+
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,12 +48,33 @@ public class LoginServlet extends HttpServlet {
             }
 
             HttpSession session = req.getSession();
+
+
             session.setAttribute("useq",seq);
+
+//          # 자동로그인
+//          쿠키생성
+            if(req.getParameter("userIdEmail") != null) {
+                Cookie cookie = new Cookie("userIdEmail", userIdEmail);
+                cookie.setMaxAge(10); //초단위
+                cookie.setPath("/"); // 쿠키 저장 위치
+                resp.addCookie(cookie);
+            }
+
             resp.sendRedirect("/main");
 
 
 //          로그인 실패 시.
 //          #4 login페이지로 이동
-        } else {resp.sendRedirect("/login");}
+        } else {
+            //
+
+
+            resp.sendRedirect("/login");
+        }
+
+
+
+
     }
 }

@@ -30,7 +30,7 @@
     <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
         <c:forEach items="${horrorList}" var="horror">
-          <div style="background-image: url(${horror.getDetail_image()})" class="swiper-slide"></div>
+          <div style="background-image: url(${horror.getDetail_image()})" class="swiper-slide" onclick="window.location.href='/detailSub?seq=${horror.getMovie_seq()}'"></div>
         </c:forEach>
       </div>
       <div class="swiper-pagination"></div>
@@ -44,7 +44,7 @@
     <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
         <c:forEach items="${actionList}" var="action">
-          <div style="background-image: url(${action.getDetail_image()})" class="swiper-slide"></div>
+          <div style="background-image: url(${action.getDetail_image()})" class="swiper-slide" onclick="window.location.href='/detailSub?seq=${action.getMovie_seq()}'"></div>
         </c:forEach>
       </div>
       <div class="swiper-pagination"></div>

@@ -19,6 +19,15 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>DetailSubServlet</servlet-name>
+    <servlet-class>servlet.DetailSubServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DetailSubServlet</servlet-name>
+    <url-pattern>/detailSub</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>servlet.LoginServlet</servlet-class>
   </servlet>
