@@ -37,6 +37,7 @@ public class LoginServlet extends HttpServlet {
 //      아이디로 로그인
 
 
+        // 태홍 : 여기 세션 수정
 //      #5 로그인 후
 //      userDto1 != null을 하면 오류 뜸 -> 왜? userDto1은 껍데기이지 null이 아님
 //      userDto1.getUser_email()로 구체적인 값이 null인 걸 지정해줘야함..!
