@@ -16,7 +16,6 @@
         <div class="menu_item"><a href="/addSubMovie">서브 슬라이드 영화 추가하기</a></div>
         <div class="menu_item"><a href="/addActor">배우 추가하기</a></div>
         <div class="menu_item"><a href="/showMovieList">영화 출연진 추가하기</a></div>
-        <div class="menu_item"><a href="/showMovieList">영화 출연진 삭제하기</a></div>
     </div>
 </div>
 </body>
