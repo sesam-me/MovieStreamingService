@@ -8,10 +8,18 @@ import javax.servlet.http.Cookie;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        HttpSession session = req.getSession();
+        String userId = (String) session.getAttribute("id");
+        // 유저 아이디가 null이 아니면
+        if(userId != null){
+            req.setAttribute("id",userId);
+            session.setAttribute("isChecked",true);
+        }else{
+            req.setAttribute("id",""); // 로그인 실패는 값이 없음(null)-> 아무 값도 저장X
+            session.setAttribute("isChecked",false);
+        }
         req.getRequestDispatcher("views/login/login.jsp").forward(req,resp);
-
-
-
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -20,6 +28,8 @@ public class LoginServlet extends HttpServlet {
 //      Parameter는 실제 DB변수명을 적어야함
         String userIdEmail = req.getParameter("user_id_email");
         String userPwd = req.getParameter("user_pwd");
+        String isChecked = req.getParameter("isChecked");
+
 
 
 //      #2 로그인 정보 저장
@@ -40,6 +50,13 @@ public class LoginServlet extends HttpServlet {
 //      #3 로그인 성공/실패
 //      userDto1 != null을 하면 오류 뜸 -> 왜? userDto1은 껍데기이지 null이 아님
 //      userDto1.getUser_email()로 구체적인 값이 null인 걸 지정해줘야함..!
+        HttpSession session = req.getSession();
+        if(isChecked!=null){
+            session.setAttribute("id",userIdEmail);
+        }else{
+            session.removeAttribute("id");
+        }
+
 
         if(userDto1!= null || userDto2!= null) {
 
@@ -48,19 +65,11 @@ public class LoginServlet extends HttpServlet {
                 seq = userDto2.getUser_seq();
             }
 
-            HttpSession session = req.getSession();
 
 
             session.setAttribute("useq",seq);
-
-//          # 자동로그인
-//          쿠키생성
-            if(req.getParameter("userIdEmail") != null) {
-                Cookie cookie = new Cookie("userIdEmail", userIdEmail);
-                cookie.setMaxAge(10); //초단위
-                cookie.setPath("/"); // 쿠키 저장 위치
-                resp.addCookie(cookie);
-            }
+            //  # 아이디 저장
+          // 위에 Parameter에서 받아온 값을 세션에 저장
 
             resp.sendRedirect("/main");
 
@@ -68,9 +77,6 @@ public class LoginServlet extends HttpServlet {
 //          로그인 실패 시.
 //          #4 login페이지로 이동
         } else {
-            //
-
-
             resp.sendRedirect("/login");
         }
 
