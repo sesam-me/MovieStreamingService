@@ -7,16 +7,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class LogoutServlet extends HttpServlet {
-
-//   [header.jsp] <li><a href="/logout">로그아웃</a></li>에서 herf는 doget으로 받음
+public class AiResultServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        session.removeAttribute("useq");
 
-        resp.sendRedirect("/main");
+
+        req.getRequestDispatcher("views/aiResult.jsp").forward(req,resp);
     }
 
-
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doPost(req, resp);
+    }
 }

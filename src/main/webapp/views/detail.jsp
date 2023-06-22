@@ -1,5 +1,5 @@
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +7,7 @@
     <title>Movie_Team_5</title>
     <link rel="stylesheet" href="../style/reset.css">
     <link rel="stylesheet" href="../style/detail.css">
+    <link rel="stylesheet" href="../style/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>
 <body>
@@ -71,7 +72,9 @@
                         </div>
                         <div class="flexGap">
                             <p>출연</p>
-                            <p>빈 디젤, 제이슨 모모아, 제이슨 스타뎀, 샤를리즈 테론, 브리 라슨</p>
+                            <c:forEach items='${actorList}' var="actor">
+                                <div class="menu_item">${actor.getName()}</div>
+                            </c:forEach>
                         </div>
                         <div class="flexGap">
                             <p>감독</p>

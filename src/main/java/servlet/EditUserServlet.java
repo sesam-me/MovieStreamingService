@@ -14,6 +14,17 @@ public class EditUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        HttpSession session = req.getSession();
+        int i = Integer.parseInt(String.valueOf(session.getAttribute("useq")));
+        UserDto userBySeq = UserDao.getUserRepository().getUserBySeq(i);
+        //세션 5개 설정  userName ,email ,password, birthday, phoneNumber
+        req.setAttribute("userName",userBySeq.getUser_name());
+        req.setAttribute("email",userBySeq.getUser_email());
+        req.setAttribute("password",userBySeq.getUser_pwd());
+        req.setAttribute("birthday",userBySeq.getUser_birthdate());
+        req.setAttribute("phoneNumber",userBySeq.getUser_phone_number());
+
+
         req.getRequestDispatcher("views/myPage/editUserInfo.jsp").forward(req,resp);
     }
 
