@@ -201,5 +201,10 @@ body {
     margin-bottom: 30px;
     font-weight: 400;
 }
+.right_info_area .flexGap .menu_item{
+    color: #ffffff;
+    font-weight: bold;
+
+}
 
 
