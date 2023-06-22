@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class MainDao {
 
     public List<MovieDto> mainMovieList(){
         Connection conn = new JdbcConnection().getJdbc();
-        String sql = "select * from main_movie where release_date < now()ORDER BY release_date ASC";
+        String sql = "select * from main_movie where release_date < now() ORDER BY release_date ASC";
 
         List<MovieDto> movieDtoList = new ArrayList<MovieDto>();
 
@@ -56,6 +57,53 @@ public class MainDao {
         return movieDtoList;
     }
 
+    public List<MovieDto> shownMovies() {
+        Connection conn = new JdbcConnection().getJdbc();
+
+        String sql = "select * from main_movie where release_date < now() ORDER BY release_date DESC;";
+
+        List<MovieDto> shownMoviesList = new ArrayList<MovieDto>();
+
+
+        try {
+            PreparedStatement psmt = conn.prepareStatement(sql);
+
+            ResultSet resultSet = psmt.executeQuery();
+
+            while (resultSet.next()) {
+                // 새로운 객체 생성
+                MovieDto movieDto = new MovieDto();
+
+                movieDto.setMovie_seq(resultSet.getInt("movie_seq"));
+                movieDto.setTitle(resultSet.getString("title"));
+                movieDto.setRelease_date(resultSet.getDate("release_date"));
+                movieDto.setDuration(resultSet.getInt("duration"));
+                movieDto.setDescription(resultSet.getString("description"));
+                movieDto.setRating(resultSet.getString("rating"));
+                movieDto.setGenre(resultSet.getString("genre"));
+                movieDto.setDirector(resultSet.getString("director"));
+                movieDto.setLink(resultSet.getString("link"));
+                movieDto.setPoster_image(resultSet.getString("poster_image"));
+                movieDto.setText_image(resultSet.getString("text_image"));
+                movieDto.setDetail_image(resultSet.getString("detail_image"));
+                movieDto.setDetail_text_image(resultSet.getString("detail_text_image"));
+
+                shownMoviesList.add(movieDto);
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return shownMoviesList;
+    }
 
 
     public int insertMainMovie(MovieDto movieDto) {

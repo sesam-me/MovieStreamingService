@@ -5,6 +5,8 @@ import dao.MainDao;
 import dto.ActorDto;
 import dto.MovieDto;
 
+import java.util.List;
+
 public class AdminService {
     private static AdminService adminService;
     public static AdminService getMainService() {
@@ -17,8 +19,7 @@ public class AdminService {
         MainDao.getRepository().insertMainMovie(movieDto);
     }
 
-    public void insertSubMovie(MovieDto movieDto
-    ){
+    public void insertSubMovie(MovieDto movieDto){
         MainDao.getRepository().insertSubMovie(movieDto);
     }
 
@@ -26,5 +27,19 @@ public class AdminService {
         ActorDao.getRepository().insertActor(actorDto);
     }
 
-    
+    public List<MovieDto> shownMovieList(){
+        List<MovieDto> movieList = MainDao.getRepository().shownMovies();
+        return movieList;
+    }
+
+    public List<ActorDto> actorDtoList(){
+        List<ActorDto> actorList = ActorDao.getRepository().actorList();
+        return actorList;
+    }
+
+    public void insertMovieActor(int movie_seq, int actor_seq){
+        ActorDao.getRepository().insertMovieActor(movie_seq, actor_seq);
+    }
+
+
 }
