@@ -71,7 +71,8 @@ Java 8 Servlet MySql ChatGPT JDBC Tomcat
 | Main 화면      | Login 화면        |
 | ------------ | ------------- |
 | ![GIFMaker_me](https://github.com/sesam-me/HTML_lesson/assets/122416681/b5aa6afa-9ce7-4685-972b-830ab5d4ab05)| ![MovieService login gif](https://github.com/sesam-me/HTML_lesson/assets/122416681/911bd4e9-a6ee-40df-b5f6-68698942d45a)  |
-| Admin 화면      |
+
+| Admin 화면     |
 | ------------ |
 | ![MovieService admin gif](https://github.com/sesam-me/HTML_lesson/assets/122416681/5e45adcb-3a72-4a85-b79b-1ec6355ff5ee)|
 
