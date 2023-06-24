@@ -57,7 +57,7 @@ Java 8 Servlet MySql ChatGPT JDBC Tomcat
 <ol>
   <li>로그인/로그아웃</li>
   <li>회원가입</li>
-  <li>정보수정</li>
+  <li>회원정보수정</li>
   <li>아이디 찾기, 비밀번호 재설정</li>
   <li>admin 메뉴 영화 추가</li>
   <li>admin 메뉴 배우 추가</li>
@@ -68,9 +68,9 @@ Java 8 Servlet MySql ChatGPT JDBC Tomcat
 
 ## Feature Implementation
 
-| Main 화면      | Login         |
+| Main 화면      | Login 화면        |
 | ------------ | ------------- |
-| ![GIFMaker_me](https://github.com/sesam-me/HTML_lesson/assets/122416681/b5aa6afa-9ce7-4685-972b-830ab5d4ab05)| Content Cell  |
+| ![GIFMaker_me](https://github.com/sesam-me/HTML_lesson/assets/122416681/b5aa6afa-9ce7-4685-972b-830ab5d4ab05)| ![MovieService login gif](https://github.com/sesam-me/HTML_lesson/assets/122416681/911bd4e9-a6ee-40df-b5f6-68698942d45a)  |
 
 
 
