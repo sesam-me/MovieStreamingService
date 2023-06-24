@@ -1,10 +1,14 @@
 # MovieStreamingService
-이전에 콘솔로만 결과를 확인하였는데 웹을 통해 화면으로 볼 수 있게 하였습니다.<br>
+이전에 콘솔로만 결과를 확인하였는데 웹을 통해 웹으로 볼 수 있게 하였습니다.<br>
 스트리밍사이트 Wavve웹 페이지를 클론코딩하였습니다.
 
 ## Index
-
-
+[1.Technology](#technology)<br>
+[2.Contents](#contents)<br>
+[3.ERD](#erd)<br>
+[4.Contributing](#contributing)<br>
+[5.Description](#description)<br>
+[6.Feature Implementation](#feature-implementation)
 
 ## Technology
 <h4>fornt</h4>
