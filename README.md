@@ -1,5 +1,5 @@
 # MovieStreamingService
-이전에 콘솔로만 결과를 확인하였는데 웹을 통해 화면으로 볼 수 있게 하였습니다.
+이전에 콘솔로만 결과를 확인하였는데 웹을 통해 화면으로 볼 수 있게 하였습니다.<br>
 스트리밍사이트 Wavve웹 페이지를 클론코딩하였습니다.
 
 ## Index
@@ -74,7 +74,7 @@ Java 8 Servlet MySql ChatGPT JDBC Tomcat
 
 | Admin 화면     |
 | ------------ |
-| ![MovieService admin gif](https://github.com/sesam-me/HTML_lesson/assets/122416681/5e45adcb-3a72-4a85-b79b-1ec6355ff5ee)|
+| ![MovieService admin gif](https://github.com/sesam-me/HTML_lesson/assets/122416681/a100fb95-d0f1-423c-a539-8461dadb879b)|
 
 
 
