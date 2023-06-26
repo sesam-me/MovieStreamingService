@@ -9,6 +9,7 @@
 [4.Contributing](#contributing)<br>
 [5.Description](#description)<br>
 [6.Feature Implementation](#feature-implementation)
+[7.느낀점](#느낀점)
 
 ## Technology
 <h4>fornt</h4>
@@ -81,8 +82,13 @@ Java 8 Servlet MySql ChatGPT JDBC Tomcat
 | ![MovieService admin gif](https://github.com/sesam-me/HTML_lesson/assets/122416681/a100fb95-d0f1-423c-a539-8461dadb879b)|
 
 
-
-
+## 느낀점
+이번 프로젝트는 코드를 웹으로 구현했다는 것이다. 많은 데이터를 원하는 정보만 보기 좋게 보여주고 다른 사람에게 정보가 되어야 유의미한 프로젝트가 아닐까라는 생각이 들었다. 수요가 있어야 프로젝트가 쓸모가 있어질 테니..<br>
+Servlet을 활용하여 클라이언트의 요청과 응답하는 동적인 웹컨텐츠를 생성했는데, Dto, Dao, Service 등의 관계와 흐름을 익힐 수 있었다. 그 동안 사용한 홈페이지들이 어떤 흐름으로 회원정보가 저장되고 사용되는지 알 수 있었다.<br>
+- 개선해야 할 점
+1. 아직 구현해보지 못한 자동로그인이 있는데 Cookie와 session을 활용해서 완성도를 높이고 싶다.
+2. DB를 MySQL에서 직접 insert하였는데, 다음에는 통계청에서 주는 자료처럼 주어지는 큰 데이터를 활용해서 가공해보고 싶다.
+3. Spring 접목해서 더 간단한 코드를 만들어 보고 싶다.
 
 
 <br>
